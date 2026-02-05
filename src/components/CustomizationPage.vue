@@ -1,11 +1,11 @@
 <template>
     <nav class="fixed w-full top-0 left-0 z-[200] bg-white border-b border-stone-100 px-6 py-4 flex items-center justify-between shadow-sm">
     
-    <div class="flex-1">
-      <div class="relative w-32 h-10 overflow-hidden">
+    <div href="#" class="flex-1">
+      <div  class="relative w-32 h-10 overflow-hidden">
         <transition name="logo-fade">
-          <img v-if="currentLogo === 1" key="l1" src="/logo-1.png" class="absolute inset-0 w-full h-full object-contain" />
-          <img v-else key="l2" src="/logo-2.png" class="absolute inset-0 w-full h-full object-contain" />
+          <img  v-if="currentLogo === 1" key="l1" src="/logo-1.png" class="absolute inset-0 w-full h-full object-contain" />
+          <img  v-else key="l2" src="/logo-2.png" class="absolute inset-0 w-full h-full object-contain" />
         </transition>
       </div>
     </div>
@@ -230,12 +230,23 @@ onUnmounted(() => {
   if (logoInterval) clearInterval(logoInterval);
 });
 
+const generateOrderID = () => {
+  const date = new Date();
+  const year = date.getFullYear().toString().slice(-2);
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+  const randomSerial = Math.floor(Math.random() * 900) + 100; 
+  
+  return `SC-${year}${month}${day}-${randomSerial}`;
+};
+
 const sendOrder = () => {
+  const orderID = generateOrderID(); // Generate ID at moment of click
   const finalWish = form.wish === 'Other' ? form.customWish : form.wish;
   const waNumber = '923352210993';
   
-  // Clean dynamic message including only selected data
   const text = `*New Order - Saifee Creations* 📩
+*Order ID:* ${orderID}
 --------------------------
 *Product:* ${props.product.title}
 *Category:* ${props.category.name}
@@ -262,7 +273,7 @@ const sendOrder = () => {
   50% { opacity: .5; }
 }
 /* Logo Transition */
-logo-fade-enter-active, .logo-fade-leave-active {
+.logo-fade-enter-active, .logo-fade-leave-active {
   transition: all 0.7s ease;
 }
 .logo-fade-enter-from { opacity: 0; transform: translateY(8px); }

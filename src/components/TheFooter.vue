@@ -28,7 +28,7 @@
           </div>
 
           <p class="text-stone-500 text-sm font-light leading-relaxed max-w-sm">
-            Crafting the canvas for your most significant messages. From bespoke wedding suites to minimalist corporate stationery, we celebrate the tactile beauty of fine paper.
+            Crafting the canvas for your most significant messages. From bespoke wedding suites to minimalist corporate Envelopes, we celebrate the tactile beauty of fine paper.
           </p>
           
           <div class="flex items-center space-x-6 pt-4">
@@ -78,7 +78,7 @@
 
       <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
         <p class="text-[9px] uppercase tracking-[0.4em] text-stone-600">
-          © {{ currentYear }} Saifee Creations • Artisanal Stationery
+          © {{ currentYear }} Saifee Creations • Custom Envelopes
         </p>
         <div class="flex items-center space-x-8 text-stone-600 text-[9px] uppercase tracking-[0.4em]">
           <a href="#" class="hover:text-stone-400 transition-colors">Privacy</a>

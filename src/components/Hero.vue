@@ -4,7 +4,7 @@
     <div class="flex-1 px-8 md:px-16 lg:px-24 pt-32 pb-12 md:py-0 z-10">
       <div class="hero-text-container">
         <h3 class="gold-text uppercase tracking-[0.4em] text-xs mb-4 block overflow-hidden">
-          <span class="inline-block translate-y-full hero-reveal">Premium Stationery</span>
+          <span class="inline-block translate-y-full hero-reveal">Premium Envelopes</span>
         </h3>
         
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-800 leading-tight mb-6 overflow-hidden">
@@ -18,11 +18,7 @@
           </span>
         </p>
         
-        <div class="flex space-x-4 overflow-hidden">
-          <button class="hero-reveal hero-btn bg-stone-800 text-white px-8 py-4 text-xs uppercase tracking-widest hover:bg-gold-leaf transition-colors duration-500">
-            View Collections
-          </button>
-        </div>
+       
       </div>
     </div>
 

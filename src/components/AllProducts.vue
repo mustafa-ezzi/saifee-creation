@@ -62,9 +62,13 @@ const catalogData = [
     specs: ["180 GM Matte Card", "7x3 Inches", "Sticky Back Tape"],
     rates: { 20: '1,200', 50: '1,500', 100: '2,200' },
     products: [
-      { id: 101, title: "Royal Sand Matte", image: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?q=80&w=800" },
-      { id: 102, title: "Deep Forest Matte", image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=800" },
-      { id: 103, title: "Midnight Charcoal", image: "https://images.unsplash.com/photo-1516533037748-628d3f823e27?q=80&w=800" }
+      { id: 101, title: "Royal Sand Matte", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/483723021_17953843763919940_980147031252856524_n.webp?_nc_cat=106&ig_cache_key=MzU4NzIxMTczMTQzMjIyNTc4MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=33-BBY0wQAoQ7kNvwF284Ni&_nc_oc=AdkpNrmpZpg5izhwB6SfFkC2wx9y4_2U-dVKvDCUI_b6LGdFfvsTgjqrh4JlpTNNb_bbfBX9iTqV5vUG6RN9sfny&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AftStaePADPHOTrc71CNBXMlLERbro9r-H5V_JI9tst4Sg&oe=698A1C2F" },
+      { id: 102, title: "Deep Forest Matte", image: "https://instagram.fkhi22-1.fna.fbcdn.net/v/t51.82787-15/540573158_17972706980919940_5995382558329972232_n.webp?_nc_cat=111&ig_cache_key=MzcxMTM0NzYwODEzNzc4ODE5MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=6UCGebTQLAkQ7kNvwG31ooZ&_nc_oc=AdkHiBqVzw88rkG2e7vbb_-NpXZJrs3qd3ix545W3Dv0L_k94wEtGSYOxW6KCFu5Fw2nPFDSoAt5I8GBfhWLM7wP&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi22-1.fna&_nc_gid=5VTXEPyieP8CegYPA-S1-Q&oh=00_Afsgj4eMaE7JbrGwk-Nd5z0RDUr1ujz6uZOUJVTRIKAYsQ&oe=6989F987" },
+      { id: 103, title: "Midnight Charcoal", image: "/charcoal.png" },
+      { id: 103, title: "Midnight Charcoal", image: "/charcoal.png" },
+      { id: 104, title: "Royal Sand Matte", image: "/charcoal.png" },
+      { id: 105, title: "Deep Forest Matte", image: "/charcoal.png" }
+
     ]
   },
   {
@@ -73,8 +77,8 @@ const catalogData = [
     specs: ["140 GSM Glossy", "7x3 Inches", "Sticky Back Tape"],
     rates: { 20: '1,000', 50: '1,300', 100: '2,000' },
     products: [
-      { id: 201, title: "Golden Pearl Shimmer", image: "https://images.unsplash.com/photo-1598914614611-6655c6978683?q=80&w=800" },
-      { id: 202, title: "Silver Moon Gloss", image: "https://images.unsplash.com/photo-1614032126233-a3bc89110492?q=80&w=800" }
+      { id: 201, title: "Golden Pearl Shimmer", image: "/eid-env.png" },
+      { id: 202, title: "Silver Moon Gloss", image: "/eid2.png" }
     ]
   },
   {
@@ -83,14 +87,24 @@ const catalogData = [
     specs: ["High Quality Print", "Festive Designs"],
     rates: { 20: '1,200', 50: '1,500', 100: '2,200' },
     products: [
-      { id: 301, title: "Floral Chand Raat", image: "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?q=80&w=800" }
+      { id: 301, title: "Floral Chand Raat", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
+      { id: 302, title: "Floral Chand Raat", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
+      { id: 303, title: "Floral Chand Raat", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
+      
+    { id: 304, title: "Eid Special", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/484345382_17953843556919940_5719011624453021580_n.webp?_nc_cat=101&ig_cache_key=MzU4NzIxMDQzODQ3MDg2OTIzNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=MIaXc4xcXEQQ7kNvwEU-PIk&_nc_oc=AdnoHiRZPd_e3qH0dWEx-C_BX-ikfpJq6cmvHFgS1s5vg-pvE2jcJaEJGgm8WkVJHSzo5jLpnwGRo9RUX29DmvGX&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfvL7Igu_zPDVFY8zax17plKcLfhZYXEBIkhtBAdq7VHwQ&oe=698A1F31" }
     ]
   },
   {
     name: "Best Sellers",
     description: "", // No description as per your requirement
     products: [
-      { id: 401, title: "Classic Ivory Matte", image: "https://images.unsplash.com/photo-1603533400507-68040d85a153?q=80&w=800" }
+      { id: 401, title: "Classic Ivory Matte", image: "/premium.png" },
+      { id: 402, title: "Classic Ivory Matte", image: "/new.png" },
+      { id: 403, title: "Classic Ivory Matte", image: "/premium.png" },
+      { id: 404, title: "Classic Ivory Matte", image: "/fest.png" },
+      { id: 405, title: "Classic Ivory Matte", image: "/premium.png" },
+      { id: 405, title: "Classic Ivory Matte", image: "/premium.png" },
+
     ]
   },
 
@@ -98,16 +112,25 @@ const catalogData = [
     name: "New Arrivals",
     description: "", // No description as per your requirement
     products: [
-      { id: 401, title: "Classic Ivory Matte", image: "https://images.unsplash.com/photo-1603533400507-68040d85a153?q=80&w=800" }
+      { id: 401, title: "Classic Ivory Matte", image: "/new.png" },
+      { id: 402, title: "Classic Ivory Matte", image: "/fest.png" },
+      { id: 403, title: "Classic Ivory Matte", image: "/new.png" },
+      { id: 404, title: "Classic Ivory Matte", image: "/premium.png" },
+      { id: 405, title: "Classic Ivory Matte", image: "/new.png" },
+
     ]
   },
   {
     name: "Festive Collection",
     description: "", // No description as per your requirement
     products: [
-      { id: 401, title: "Classic Ivory Matte", image: "https://images.unsplash.com/photo-1603533400507-68040d85a153?q=80&w=800" }
+      { id: 401, title: "Classic Ivory Matte", image: "/fest.png" },
+      { id: 402, title: "Classic Ivory Matte", image: "/new.png" },
+      { id: 403, title: "Classic Ivory Matte", image: "/fest.png" },
+      { id: 404, title: "Classic Ivory Matte", image: "/premium.png" },
+      { id: 405, title: "Classic Ivory Matte", image: "/fest.png" },
     ]
-  }
+  },
 ];
 
 const openProduct = (product, category) => {
