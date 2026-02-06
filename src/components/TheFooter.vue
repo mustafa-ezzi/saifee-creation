@@ -1,89 +1,56 @@
 <template>
-  <footer class="relative bg-[#0F0F0F] pt-24 pb-12 overflow-hidden border-t border-white/5">
-    <div class="absolute bottom-0 right-0 pointer-events-none select-none opacity-[0.02]">
-      <span class="text-[15vw] font-serif italic leading-none text-white">Saifee</span>
-    </div>
-
-    <div class="max-w-[1400px] mx-auto px-6 relative z-10">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+  <footer class="relative bg-[#0F0F0F] py-12 overflow-hidden border-t border-white/5">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
         
-        <div class="md:col-span-5 space-y-8">
-          <div class="relative h-16 w-48 overflow-hidden">
-            <transition name="logo-fade">
-              <img 
-                v-if="currentLogo === 1" 
-                key="f-logo1"
-                src="/logo-1.png" 
-                alt="Saifee Creations" 
-                class="absolute inset-0 h-full object-contain brightness-0 invert"
-              />
-              <img 
-                v-else 
-                key="f-logo2"
-                src="/logo-2.png" 
-                alt="Saifee Creations" 
-                class="absolute inset-0 h-full object-contain brightness-0 invert"
-              />
-            </transition>
-          </div>
-
-          <p class="text-stone-500 text-sm font-light leading-relaxed max-w-sm">
-            Crafting the canvas for your most significant messages. From bespoke wedding suites to minimalist corporate Envelopes, we celebrate the tactile beauty of fine paper.
-          </p>
-          
-          <div class="flex items-center space-x-6 pt-4">
-            <a href="https://www.instagram.com/saifeecreationspak" target="_blank" class="group flex items-center space-x-3 text-stone-400 hover:text-brand-gold transition-all duration-500">
-              <span class="text-[10px] uppercase tracking-[0.3em]">Instagram</span>
-              <div class="w-8 h-px bg-stone-800 group-hover:w-12 group-hover:bg-brand-gold transition-all duration-500"></div>
-            </a>
-            <a href="https://wa.me/+923352210993" target="_blank" class="group flex items-center space-x-3 text-stone-400 hover:text-brand-gold transition-all duration-500">
-              <span class="text-[10px] uppercase tracking-[0.3em]">WhatsApp</span>
-              <div class="w-8 h-px bg-stone-800 group-hover:w-12 group-hover:bg-brand-gold transition-all duration-500"></div>
-            </a>
-          </div>
+        <!-- Logo -->
+        <div class="relative h-12 w-32 md:w-40">
+          <transition name="logo-fade">
+            <img 
+              v-if="currentLogo === 1" 
+              key="f-logo1"
+              src="/logo-1.png" 
+              alt="Saifee Creations" 
+              class="absolute inset-0 h-full object-contain brightness-0 invert"
+            />
+            <img 
+              v-else 
+              key="f-logo2"
+              src="/logo-2.png" 
+              alt="Saifee Creations" 
+              class="absolute inset-0 h-full object-contain brightness-0 invert"
+            />
+          </transition>
         </div>
 
-        <div class="md:col-span-3 space-y-6">
-          <h4 class="text-white text-[10px] uppercase tracking-[0.5em] font-bold">The Studio</h4>
-          <ul class="space-y-4">
-            <li v-for="link in navLinks" :key="link.name">
-              <button 
-                @click="handleNav(link.target)"
-                class="text-stone-500 hover:text-white text-xs tracking-widest uppercase transition-colors duration-300 text-left"
-              >
-                {{ link.name }}
-              </button>
-            </li>
-          </ul>
+        <!-- Center Content -->
+        <div class="text-center flex-1">
+          <p class="text-stone-400 text-xs tracking-[0.2em] uppercase">
+            © {{ currentYear }} Saifee Creations
+          </p>
         </div>
 
-        <div class="md:col-span-4 space-y-6 text-left">
-          <h4 class="text-white text-[10px] uppercase tracking-[0.5em] font-bold">Location</h4>
-          <p class="text-stone-500 text-xs tracking-[0.2em] leading-loose uppercase">
-            Karachi, Sindh<br/>
-            Pakistan
-          </p>
-          <div class="pt-4">
-            <button @click="scrollToTop" class="group flex items-center space-x-4">
-              <div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center group-hover:border-brand-gold transition-colors duration-500">
-                <svg class="w-4 h-4 text-stone-400 group-hover:text-brand-gold transform group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-              </div>
-              <span class="text-stone-500 group-hover:text-white text-[9px] uppercase tracking-[0.4em] transition-colors">Return to Top</span>
-            </button>
-          </div>
+        <!-- Social Links -->
+        <div class="flex items-center space-x-6">
+          <a href="https://www.instagram.com/saifeecreationspak" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.203 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 110.001 2.881 1.44 1.44 0 01-.001-2.881z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/+923352210993" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-white transition-colors duration-300">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.125 0-2.235.356-3.156 1.027l-.227.144-.235-.04c-.751-.127-1.522-.129-2.297.039l.463.607c.96-.763 2.286-1.223 3.652-1.223 3.035 0 5.5 2.466 5.5 5.5 0 1.366-.456 2.692-1.223 3.652l.607.463c.168-.775.166-1.546.039-2.297l-.04-.235.144-.227c.671-.921 1.027-2.031 1.027-3.156 0-3.035-2.466-5.5-5.5-5.5"/>
+            </svg>
+          </a>
         </div>
       </div>
 
-      <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p class="text-[9px] uppercase tracking-[0.4em] text-stone-600">
-          © {{ currentYear }} Saifee Creations • Custom Envelopes
+      <!-- Bottom Section -->
+      <div class="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-600">
+        <p class="tracking-[0.2em] uppercase">Crafting Premium Envelopes</p>
+        <p class="tracking-[0.2em] uppercase">
+          Designed by <a href="https://5cube.io/" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-400 font-semibold transition-colors duration-300">5Cube</a>
         </p>
-        <div class="flex items-center space-x-8 text-stone-600 text-[9px] uppercase tracking-[0.4em]">
-          <a href="#" class="hover:text-stone-400 transition-colors">Privacy</a>
-          <a href="#" class="hover:text-stone-400 transition-colors">Terms</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -92,26 +59,11 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted } from 'vue';
 
-const emit = defineEmits(['nav-click']);
 const currentYear = computed(() => new Date().getFullYear());
 
 // Logo Logic
 const currentLogo = ref(1);
 let logoInterval = null;
-
-const navLinks = [
-  { name: 'Home', target: 'home' }, 
-  { name: 'Collections', target: 'shop' }, 
-  { name: 'Our Process', target: 'process' }, 
-];
-
-const handleNav = (target) => {
-  emit('nav-click', target);
-};
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
 onMounted(() => {
   logoInterval = setInterval(() => {
@@ -125,13 +77,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.text-brand-gold { color: #C9A961; }
-
-/* Inverts logos for dark background if they are originally dark */
-.brightness-0.invert {
-  filter: brightness(0) invert(1);
-}
-
 /* Logo Animation */
 .logo-fade-enter-active, .logo-fade-leave-active {
   transition: opacity 1.2s ease, transform 1.2s ease;
@@ -145,17 +90,8 @@ onUnmounted(() => {
   transform: translateY(-5px);
 }
 
-button { background: none; border: none; cursor: pointer; padding: 0; }
-li button { position: relative; }
-li button::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: -4px;
-  left: 0;
-  background-color: #C9A961;
-  transition: width 0.4s ease;
+/* Inverts logos for dark background if they are originally dark */
+.brightness-0.invert {
+  filter: brightness(0) invert(1);
 }
-li button:hover::after { width: 100%; }
 </style>

@@ -1,26 +1,13 @@
 <template>
     <nav class="fixed w-full top-0 left-0 z-[200] bg-white border-b border-stone-100 px-6 py-4 flex items-center justify-between shadow-sm">
     
-    <div href="#" class="flex-1">
+    <div @click="$emit('back')"  class="flex-1">
       <div  class="relative w-32 h-10 overflow-hidden">
         <transition name="logo-fade">
           <img  v-if="currentLogo === 1" key="l1" src="/logo-1.png" class="absolute inset-0 w-full h-full object-contain" />
           <img  v-else key="l2" src="/logo-2.png" class="absolute inset-0 w-full h-full object-contain" />
         </transition>
       </div>
-    </div>
-    
-    <div class="flex-1 text-center hidden md:block">
-      <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-stone-900">Design Studio</span>
-    </div>
-
-    <div class="flex-1 flex justify-end">
-      <button 
-        @click="$emit('back')" 
-        class="text-[9px] uppercase tracking-widest font-black text-stone-900 border border-stone-200 px-5 py-2.5 hover:bg-stone-900 hover:text-white transition-all duration-300"
-      >
-        Exit Studio
-      </button>
     </div>
   </nav>
 
@@ -45,7 +32,7 @@
           <div class="flex flex-col md:flex-row items-center gap-6">
             <div class="flex items-center gap-2">
               <p class="text-rose-600 text-[10px] uppercase tracking-[0.25em] font-black animate-pulse">
-                Free Shipping <span class="text-stone-400 font-medium tracking-normal mx-1">on orders above</span> Rs. 1,998
+                Free Shipping <span class="text-stone-400 font-medium tracking-normal mx-1">on orders above</span> Rs. 1,499
               </p>
             </div>
             
@@ -139,6 +126,54 @@
             </h3>
             <input v-model="form.printName" type="text" placeholder="e.g., Mr. & Mrs. Saifee" class="w-full border-b border-stone-200 py-4 text-lg font-serif italic focus:border-stone-900 focus:outline-none transition-all" />
           </section>
+          
+          <section class="space-y-6">
+  <h3 class="text-xs uppercase tracking-widest font-bold text-stone-900 flex items-center gap-3">
+    <span class="w-6 h-6 bg-stone-900 text-white rounded-full flex items-center justify-center text-[10px]">4</span>
+    Choose Typography Style
+  </h3>
+
+  <div class="relative overflow-hidden bg-stone-50 border border-stone-100 p-10 text-center rounded-sm">
+    <div class="absolute top-3 left-3 text-[8px] uppercase tracking-[0.2em] text-stone-300 font-bold">Studio Preview</div>
+    
+    <p 
+      :style="{ fontFamily: fontOptions.find(f => f.name === form.fontStyle)?.family }"
+      class="text-4xl md:text-5xl text-stone-800 font-preview-text transition-all duration-500"
+    >
+      {{ form.printName || 'Your Name' }}
+    </p>
+    
+    <div class="mt-4 text-[9px] uppercase tracking-widest text-[#C9A961] font-bold">
+      Selected: {{ form.fontStyle }}
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <button 
+      v-for="font in fontOptions" 
+      :key="font.name"
+      @click="form.fontStyle = font.name"
+      :class="[
+        'p-5 border text-left transition-all duration-300 flex justify-between items-center group',
+        form.fontStyle === font.name ? 'border-stone-900 bg-white shadow-md' : 'border-stone-100 bg-white/50 hover:border-stone-300'
+      ]"
+    >
+      <span 
+        :style="{ fontFamily: font.family }" 
+        class="text-xl text-stone-800"
+      >
+        {{ font.name }}
+      </span>
+      <div 
+        class="w-4 h-4 rounded-full border border-stone-200 flex items-center justify-center transition-colors"
+        :class="{'bg-stone-900 border-stone-900': form.fontStyle === font.name}"
+      >
+        <div v-if="form.fontStyle === font.name" class="w-1.5 h-1.5 bg-white rounded-full"></div>
+      </div>
+    </button>
+  </div>
+</section>
+
 
           <section class="bg-stone-50 p-8 space-y-6 rounded-sm border border-stone-100">
             <h3 class="text-xs uppercase tracking-widest font-bold text-stone-900">Step 4: Delivery Details</h3>
@@ -148,6 +183,8 @@
               <input v-model="form.instructions" type="text" placeholder="Special Instructions (Optional)" class="w-full bg-white border border-stone-200 p-4 text-sm focus:border-stone-900 focus:outline-none"/>
             </div>
           </section>
+
+          
 
           <div class="bg-stone-900 text-white p-8 rounded-sm shadow-2xl space-y-6">
             <div class="flex justify-between items-center border-b border-white/10 pb-6">
@@ -184,7 +221,7 @@ import { reactive, ref, onMounted, computed,onUnmounted } from 'vue';
 const props = defineProps(['product', 'category']);
 const emit = defineEmits(['back']);
 
-// Scarcity Logic
+
 const viewerCount = ref(58);
 const totalSeconds = ref(628);
 const minutes = ref(10);
@@ -199,22 +236,35 @@ const form = reactive({
   customWish: '',
   printName: '',
   address: '',
+  fontStyle: 'Raleway', 
   contact: '',
   instructions: ''
 });
 
-// Dynamic Price Calculation based on the selected quantity rate
+const fontOptions = [
+  { name: 'New Berolina MT', family: "'Berolina', 'Apple Chancery', cursive" },
+  { name: 'Amazon BT', family: "'AmazonBT', 'Georgia', serif" },
+  { name: 'Gabrielle', family: "'Gabrielle', 'Brush Script MT', cursive" },
+  { name: 'ITC Zapf Chancery', family: "'ZapfChancery', 'Apple Chancery', cursive" },
+  { name: 'Monotype Corsiva', family: "'Monotype Corsiva', 'Apple Chancery', cursive" },
+  { name: 'Gabriola', family: "'Gabriola', 'Segoe UI', serif" },
+  { name: 'Hello Valentica', family: "'HelloValentica', 'Pacifico', cursive" },
+  { name: 'Raleway', family: "'Raleway', sans-serif" },
+  { name: 'Impressive Regular', family: "'Impressive', 'Dancing Script', cursive" }
+];
+
+
 const currentPrice = computed(() => {
   return props.category.rates[form.quantity] || '0';
 });
 
 onMounted(() => {
-  // Start Logo Animation
+  
   logoInterval = setInterval(() => {
     currentLogo.value = currentLogo.value === 1 ? 2 : 1;
   }, 5000);
 
-  // Scarcity & Timer...
+  
   viewerCount.value = Math.floor(Math.random() * (85 - 45 + 1)) + 45;
   const timer = setInterval(() => {
     if (totalSeconds.value > 0) {
@@ -241,7 +291,7 @@ const generateOrderID = () => {
 };
 
 const sendOrder = () => {
-  const orderID = generateOrderID(); // Generate ID at moment of click
+  const orderID = generateOrderID(); 
   const finalWish = form.wish === 'Other' ? form.customWish : form.wish;
   const waNumber = '923352210993';
   
@@ -255,6 +305,7 @@ const sendOrder = () => {
 --------------------------
 *Selected Wish:* ${finalWish}
 *Printing Name:* ${form.printName || 'Not Specified'}
+*Font Style:* ${form.fontStyle} 🖋️
 --------------------------
 *Delivery Address:* ${form.address || 'Not Provided'}
 *WhatsApp Number:* ${form.contact || 'Not Provided'}
@@ -265,6 +316,14 @@ const sendOrder = () => {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'HelloValentica';
+  src: url('/fonts/hello-valentica.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Berolina';
+  src: url('/fonts/new-berolina.ttf') format('truetype');
+}
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -272,10 +331,36 @@ const sendOrder = () => {
   0%, 100% { opacity: 1; }
   50% { opacity: .5; }
 }
-/* Logo Transition */
+
 .logo-fade-enter-active, .logo-fade-leave-active {
   transition: all 0.7s ease;
 }
 .logo-fade-enter-from { opacity: 0; transform: translateY(8px); }
 .logo-fade-leave-to { opacity: 0; transform: translateY(-8px); }
+@font-face {
+  font-family: 'Gabrielle';
+  src: url('/fonts/gabrielle.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Impressive';
+  src: url('/fonts/impressive-regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ZapfChancery';
+  src: url('/fonts/itc-zapf-chancery.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Add the Google Font Import for the ones that don't need files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Dancing+Script&family=Pacifico&display=swap');
+
+/* Default preview styling */
+.font-preview-text {
+  line-height: 1.2;
+  word-break: break-word;
+}
 </style>
