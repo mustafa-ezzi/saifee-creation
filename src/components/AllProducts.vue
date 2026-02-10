@@ -111,29 +111,32 @@ const catalogData = [
       { id: 105, title: "CODE 02", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQz3Zpia0XpAfcYThPixdiWB5pQc1LXwACeh4AAplwUFSN-Bcxxd3-IjoE.jpeg" },
       { id: 102, title: "CODE 03", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQz3dpia0Z7sUUA6xKrU3NyWmNiU6-VQACex4AAplwUFRc6bHwFHUBHjoE.jpeg", hoverImage: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQz3hpia0cYP-ev0Mh-FLc_AY6l3mqjQACfB4AAplwUFT6zgNfP6RiaDoE.jpeg" },
       { id: 103, title: "CODE 04", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQz3Vpia0TnFfkHLw3tV1uBKDbRvllzAACeR4AAplwUFQ1I4TCT2rIKzoE.jpeg" },
-      { id: 104, title: "CODE 05", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQz3Rpia0REdjnCN9ldQ6WClYwQjSpKgACeB4AAplwUFSFGUlIJRmymToE.jpeg" },
     ]
   },
   {
-    name: "Pearl / Glossy Paper Envelopes",
-    description: "Designed to balance elegance and affordability for everyday and special use. Crafted from 140 GSM glossy paper, delivering a smooth, elegant, and refined finish.",
-    specs: ["140 GSM Glossy", "7x3 Inches", "Sticky Back Tape"],
-    rates: { 20: '1,000', 50: '1,300', 100: '2,000' },
-    products: [
-      { id: 201, title: "Golden Pearl Shimmer", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
-      { id: 202, title: "Silver Moon Gloss", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
-      { id: 404, title: "Classic Ivory Matte", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
-    ]
+        name: "Pearl / Glossy Paper Envelopes",
+        description: "Designed to balance elegance and affordability for everyday and special use. Crafted from 140 GSM glossy paper, delivering a smooth, elegant, and refined finish.",
+        specs: ["140 GSM Glossy", "7x3 Inches", "Sticky Back Tape"],
+        rates: { 20: '1,000', 50: '1,300', 100: '2,000' },
+        products: [
+            { id: 201, title: "PGPE 01", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1o9piwhYtflLPHUs1EH5fSU32ehPvwACiiAAAplwWFTlmCvm5-MpPjoE.jpeg" },
+            { id: 202, title: "PGPE 02", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1pBpiwhaPicgEQ-F7teyz4I7K5dXGQACiyAAAplwWFQLyHAQg3JUYjoE.jpeg" },
+            { id: 203, title: "PGPE 03", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1pJpiwhfp5uBUpLBTKlv_RtpZznuHgACjSAAAplwWFQvmYaD99CDkToE.jpeg" },
+            { id: 204, title: "PGPE 04", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1pFpiwhds1kOWRmFY_OwiGjNPBJuvQACjCAAAplwWFSAahTOP98CpjoE.jpeg" },
+
+        ]
   },
-  {
-    name: "Eid Envelopes",
-    description: "Celebrate the joy of Eid with our special collection designed for Eidi and festive greetings.",
-    specs: ["High Quality Print", "Festive Designs"],
-    rates: { 20: '1,200', 50: '1,500', 100: '2,200' },
-    products: [
-      { id: 301, title: "Floral Chand Raat", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
-      { id: 302, title: "Floral Chand Raat", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
-      { id: 404, title: "Classic Ivory Matte", image: "https://instagram.fkhi17-2.fna.fbcdn.net/v/t51.75761-15/482271976_17952784253919940_1033434239592993190_n.webp?_nc_cat=100&ig_cache_key=MzU4MDY0MTMxOTY3MjAwNzU4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=5e7KdOIvN4gQ7kNvwEBySvH&_nc_oc=Adm1Q8VfOKKPSIs7vD3meb5YfkkZxmgqYYj1YCtVevGbrGHboZo4LY-h9CQX_xKn84S27kji1BDrCob5ICDYXE1V&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fkhi17-2.fna&_nc_gid=E9gtx8c8tGyrrbl-DSAPjg&oh=00_AfuUOubteiluQEd2wJrLqd90GAhuwwk4Ywdi7P-kavFOag&oe=698A221B" },
+ {
+        name: "Eid Envelopes",
+        description: "Celebrate the joy of Eid with our special collection designed for Eidi and festive greetings.",
+        specs: ["High Quality Print", "Festive Designs"],
+        rates: { 20: '1,200', 50: '1,500', 100: '2,200' },
+        products: [
+            { id: 301, title: "EE 01", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1a1pivKbsM18I0h9Y6PknkCW0-tiVQACbB8AAplwWFRaKchEa3_4GToE.jpeg" },
+            { id: 302, title: "EE 02", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1appivKRX7fa1uXtI6vyT8qkk32LAgACaR8AAplwWFSNvCi28sWaMzoE.jpeg" },
+            { id: 303, title: "EE 03", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1aVpivKD7JSB2U0e73PWVDGlnVRQEAACZB8AAplwWFSlm-cR50rqOzoE.jpeg" },
+            { id: 304, title: "EE 04", image: "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQ1aRpivKBHWUVPzRYY-upLfKub2rz2QACYx8AAplwWFQqMYFPqiqB5joE.jpeg" },
+         
         ]
   },
   {
