@@ -49,22 +49,17 @@ import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 
 onMounted(() => {
-  const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.2 } });
+  // Kill any existing animations to prevent overlaps
+  gsap.killTweensOf(".hero-reveal, .hero-image-wrapper, .floating-card");
 
-  tl.to('.hero-reveal', {
-    y: 0,
-    stagger: 0.1,
-  })
-  .to('.hero-image-wrapper', {
-    scale: 1,
-    opacity: 1,
-    duration: 2,
-  }, "-=1")
-  .to('.floating-card', {
-    x: 24,
-    opacity: 1,
-    duration: 1.5
-  }, "-=1.5");
+  const tl = gsap.timeline({ 
+    defaults: { ease: "power4.out", duration: 1.2 },
+    delay: 0.2 // Small delay ensures DOM is fully ready
+  });
+
+  tl.to('.hero-reveal', { y: 0, stagger: 0.1 })
+    .to('.hero-image-wrapper', { scale: 1, opacity: 1, duration: 2 }, "-=1")
+    .to('.floating-card', { x: 24, opacity: 1, duration: 1.5 }, "-=1.5");
 });
 </script>
 

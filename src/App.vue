@@ -1,16 +1,12 @@
 <template>
   <div class="bg-brand-cream min-h-screen selection:bg-brand-gold selection:text-white">
-    <TheNavbar v-if="$route.name !== 'LookBook'" />
+    <TheNavbar v-if="!['Shop', 'Checkout'].includes($route.name)" />
     
     <main>
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+      <router-view :key="$route.fullPath" />
     </main>
 
-    <TheFooter v-if="$route.name !== 'LookBook'" />
+    <TheFooter v-if="!['Shop', 'Checkout'].includes($route.name)" />
   </div>
 </template>
 

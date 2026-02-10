@@ -51,7 +51,7 @@
           </div>
         </div>
         
-        <a href="#shop" class="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-900 border-b border-stone-900 pb-1 hover:text-brand-gold hover:border-brand-gold transition-all">
+        <a href="#collections" class="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-900 border-b border-stone-900 pb-1 hover:text-brand-gold hover:border-brand-gold transition-all">
           Start Your Order
         </a>
       </div>
@@ -65,7 +65,7 @@ const steps = [
   {
     title: 'Choose Your Design',
     description: 'Start by browsing our curated archive and selecting your preferred silhouette, material, and design style.',
-    iconImg: 'https://cdn-icons-png.flaticon.com/512/3221/3221803.png' // Search/Browse Icon
+    iconImg: 'https://cdn-icons-png.flaticon.com/512/3342/3342137.png' // Search/Browse Icon
   },
   {
     title: 'Personalize It',

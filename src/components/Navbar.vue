@@ -6,9 +6,8 @@
     ]"
   >
     <div class="flex-1">
-      <a href="#home" class="relative block w-28 h-10 md:w-40 md:h-14 perspective-1000">
-        <transition name="logo-flip" mode="out-in">
-          <img 
+<a href="#home" class="relative block w-36 h-12 md:w-56 md:h-20 perspective-1000 transition-all duration-300">        <transition name="logo-flip" mode="out-in">
+         <img 
             v-if="currentLogo === 1" 
             key="logo1"
             src="/logo-1.png" 
@@ -102,7 +101,7 @@ let logoInterval = null;
 
 const navLinks = [
   { name: 'Home', url: '#home' },
-  { name: 'Shop', url: '#collections' },
+  { name: 'Categories', url: '#collections' },
   { name: 'Process', url: '#howitworks' }
 ];
 
