@@ -19,7 +19,7 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-8 md:gap-y-16">
-          <div v-for="product in cat.products" :key="product.id" class="group cursor-pointer"
+          <div v-for="product in cat.products.slice(0, 4)" :key="product.id" class="group cursor-pointer"
             @click="navigateToCheckout(product, cat)">
             <div class="relative aspect-[4/5] bg-[#F9F8F6] mb-4 overflow-hidden border border-stone-50">
               <img :src="product.images[0]" :class="[
