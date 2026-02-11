@@ -69,13 +69,22 @@
             @keydown.enter.space.prevent="navigateToCheckout(product, cat)" role="button"
             :aria-label="`View ${product.title}`">
             <div class="relative aspect-[4/5] bg-[#F9F8F6] mb-4 overflow-hidden border border-stone-50">
-              <img :src="product.images[0]" :class="[
-                'w-full h-full object-cover transition-all duration-700 absolute inset-0',
-                product.images.length > 1 ? 'group-hover:opacity-0 group-hover:scale-105' : 'group-hover:scale-105'
-              ]" />
+              <div class="relative w-full h-full">
+                <img v-for="(img, idx) in product.images" :key="idx"
+                  :src="img"
+                  :class="[
+                    'w-full h-full object-cover transition-all duration-700 absolute inset-0',
+                    imageIndexMap[product.id] === idx ? 'opacity-100 scale-100 group-hover:scale-105' : 'opacity-0 scale-95',
+                    product.images.length > 1 ? 'group-hover:scale-105' : 'group-hover:scale-105'
+                  ]" />
+              </div>
 
-              <img v-if="product.images.length > 1" :src="product.images[1]"
-                class="w-full h-full object-cover transition-all duration-700 absolute inset-0 opacity-0 group-hover:opacity-100 group-hover:scale-105" />
+              <div v-if="product.images.length > 1"
+                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                <button v-for="(_, idx) in product.images" :key="idx"
+                  @click.stop="imageIndexMap[product.id] = idx"
+                  :class="['w-1.5 h-1.5 rounded-full transition-all', imageIndexMap[product.id] === idx ? 'bg-white w-3' : 'bg-white/50 hover:bg-white/70']" />
+              </div>
 
               <div
                 class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-stone-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-end justify-center pb-8 md:pb-10">
@@ -94,6 +103,10 @@
             <div class="flex justify-center mt-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div class="h-px w-10 md:w-12 bg-[#C9A961]/70"></div>
             </div>
+
+            <p v-if="product.description" class="mt-3 md:mt-4 text-[9px] md:text-[10px] text-stone-600 text-center leading-relaxed italic line-clamp-3">
+              {{ product.description }}
+            </p>
           </article>
         </div>
       </section>
@@ -108,6 +121,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 import { catalogData } from '../data/catalog.js'
 const currentLogo = ref(1)
+const imageIndexMap = ref({})
 let logoInterval = null
 
 const navigateToCheckout = (product, category) => {

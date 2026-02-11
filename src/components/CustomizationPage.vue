@@ -73,10 +73,56 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
         <div class="lg:col-span-5">
           <div class="sticky top-28">
-            <div class="aspect-[4/5] bg-stone-50 border border-stone-100 overflow-hidden mb-6 shadow-sm">
-              <img :src="product.images[0]"
-                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+            <div class="aspect-[4/5] bg-stone-50 border border-stone-100 overflow-hidden mb-6 shadow-sm relative group">
+              <div class="w-full h-full relative">
+                <img v-for="(img, idx) in product.images" :key="idx"
+                  :src="img"
+                  :class="[
+                    'w-full h-full object-cover transition-all duration-500 absolute inset-0',
+                    currentImageIndex === idx ? 'opacity-100 scale-100' : 'opacity-0'
+                  ]" />
+              </div>
+
+              <!-- Image Counter -->
+              <div v-if="product.images.length > 1"
+                class="absolute top-4 right-4 bg-stone-900/70 text-white px-3 py-1.5 rounded-full text-[10px] font-bold">
+                {{ currentImageIndex + 1 }} / {{ product.images.length }}
+              </div>
+
+              <!-- Navigation Arrows -->
+              <button v-if="product.images.length > 1"
+                @click="currentImageIndex = currentImageIndex === 0 ? product.images.length - 1 : currentImageIndex - 1"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10">
+                <svg class="w-5 h-5 text-stone-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button v-if="product.images.length > 1"
+                @click="currentImageIndex = currentImageIndex === product.images.length - 1 ? 0 : currentImageIndex + 1"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10">
+                <svg class="w-5 h-5 text-stone-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              <!-- Dot Indicators -->
+              <div v-if="product.images.length > 1" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                <button v-for="(_, idx) in product.images" :key="idx"
+                  @click="currentImageIndex = idx"
+                  :class="['h-2 rounded-full transition-all', currentImageIndex === idx ? 'bg-white w-6' : 'bg-white/50 w-2 hover:bg-white/70']" />
+              </div>
             </div>
+
+            <!-- Thumbnail Gallery -->
+            <div v-if="product.images.length > 1" class="flex gap-2 mb-6">
+              <button v-for="(img, idx) in product.images" :key="idx"
+                @click="currentImageIndex = idx"
+                :class="['w-full aspect-[4/5] border-2 overflow-hidden rounded transition-all', currentImageIndex === idx ? 'border-[#C9A961] ring-1 ring-[#C9A961]' : 'border-stone-100 hover:border-stone-200']">
+                <img :src="img" class="w-full h-full object-cover" />
+              </button>
+            </div>
+
             <h2 class="text-xl font-serif text-stone-900">{{ product.title }}</h2>
             <p class="text-[#C9A961] text-[10px] uppercase tracking-widest font-black mt-2">{{ category.name }}</p>
           </div>
@@ -230,6 +276,7 @@ let logoInterval = null;
 
 const product = ref(null);
 const category = ref(null);
+const currentImageIndex = ref(0);
 
 onMounted(() => {
   for (let cat of catalogData) {
